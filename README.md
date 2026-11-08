@@ -1,5 +1,5 @@
 Description
-
+Relics of Draemoor is a 3D, third-person medieval action-platforming game that has a main hub world, with three individual dungeons. To progress the game the player will have to explore, solve puzzles, and fight enemies, including a theme boss. The player can unlock new abilities that will help access previously inaccessible areas. The dungeons will have their own themes (ice/water, fire, and crypt) that will end with a boss fight requiring the use of the dungeon weapon.
 
 Installation
 1) Download or clone the repository from GitHub
