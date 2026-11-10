@@ -12,6 +12,13 @@ git clone git@github.com:it-sd-capstone/2026-fall-team1.git
 8) Open the project in Unity
 
 Testing
+To test the game
+1) Open the project in Unity.
+2) Open the main menu scene and press the play button in Unity Editor.
+3) When the menu scene loads click Start Game to open the Sample Scene.
+4) Test the player's movement, jumping, and camera controls.
+5) Test interactions with objects within the scene.
+6) Stop the game using the Stop button in the Unity Editor when finished.
 
 Usage
 
