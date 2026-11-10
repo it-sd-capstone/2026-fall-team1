@@ -12,7 +12,7 @@
 # Test Start Game Button
 
 ## Test Steps
-1. Run the game through the editor
+1. Run the SampleScene through the editor
 2. Click the play button
 3. Click Start Game
 
