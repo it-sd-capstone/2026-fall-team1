@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -19,14 +18,14 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseScreen.SetActive(true);
-        Time.timeScale = 1.0f;
+        Time.timeScale = 0f;
         isPaused = true;
     }
     
     public void Resume()
     {
         pauseScreen.SetActive(false);
-        Time.timeScale = 1.0f;
+        Time.timeScale = 1f;
         isPaused = false;
     }
 }
