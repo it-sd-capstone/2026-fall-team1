@@ -8,3 +8,13 @@
 ## Expected Results
 * Step 2 should result in the player character jumping
 * Step 3 should display a movement vector value of (0.00, 0.00, 1.00)
+
+# Test Start Game Button
+
+## Test Steps
+1. Run the game through the editor
+2. Click the play button
+3. Click Start Game
+
+## Expected Results
+* 4. Sample scene will load
