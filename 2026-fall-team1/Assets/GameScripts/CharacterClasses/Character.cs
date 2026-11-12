@@ -32,7 +32,7 @@ public class Character : MonoBehaviour
 
     //public void move()
     //{
-        
+
     //}
     public void Attack() { }
     public void AdjustHealth() { }
