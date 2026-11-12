@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     private int weight;
     [SerializeField]
-    private float speed;
+    public float speed;
 
 
     // Unsure if we will need Start and Update in the base class, or just the final subclasses.
@@ -30,13 +30,13 @@ public class Character : MonoBehaviour
 
     //}
 
-    public void move()
-    {
-        
-    }
-    public void attack() { }
-    public void adjustHealth() { }
-    public void knockback() { }
+    //public void move()
+    //{
+
+    //}
+    public void Attack() { }
+    public void AdjustHealth() { }
+    public void Knockback() { }
 }
 
 
