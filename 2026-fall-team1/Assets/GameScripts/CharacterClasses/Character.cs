@@ -5,7 +5,7 @@ public class Character : MonoBehaviour
 {
 
     [SerializeField]
-    private int Health;
+    private int maxHealth = 10;
     [SerializeField]
     private int height;
     [SerializeField]
@@ -15,14 +15,16 @@ public class Character : MonoBehaviour
     [SerializeField]
     public float speed;
 
+    private int currentHealth;
+
 
     // Unsure if we will need Start and Update in the base class, or just the final subclasses.
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    //void Start()
-    //{
-
-    //}
+    void Awake()
+    {
+        currentHealth = maxHealth;
+    }
 
     //// Update is called once per frame
     //void Update()
@@ -35,7 +37,24 @@ public class Character : MonoBehaviour
 
     //}
     public void Attack() { }
-    public void AdjustHealth() { }
+    public void AdjustHealth(int damage) 
+    {
+        Debug.Log("Starting Health: " + currentHealth);
+        Debug.Log(damage + " damage taken");
+        currentHealth -= damage;
+        Debug.Log(currentHealth + " health left");
+
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Debug.Log("Character Is Dead");
+    }
+
     public void Knockback() { }
 }
 
