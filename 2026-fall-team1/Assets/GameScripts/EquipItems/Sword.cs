@@ -17,6 +17,8 @@ public class Sword : MonoBehaviour
     private int attackDamage = 5;
     [SerializeField]
     private float attackDelay = 2f;
+    [SerializeField]
+    private Transform cameeraTransform;
 
     private Vector2 attackInput;
     private bool attacking = false;
@@ -43,7 +45,7 @@ public class Sword : MonoBehaviour
             if (!attacking && attackTime <=0)
             {
                 Debug.Log("Attack() called");
-                Attack();
+                Attack(attackDirection);
             }
 
         }
@@ -63,10 +65,26 @@ public class Sword : MonoBehaviour
         attackInput = input.Get<Vector2>();
     }
 
-    private void Attack()
+    private void Attack(Vector3 attackDirection)
     {
+        // Delay Time between attacks
         attacking = true;
         attackTime = attackDelay;
+
+        // rotate the player toward attack
+        Vector3 forward = cameeraTransform.forward;
+        Vector3 right = cameeraTransform.right;
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 newAttackDirection = (forward * attackDirection.z + right * attackDirection.x).normalized;
+
+
+        Quaternion targetRotation = Quaternion.LookRotation(newAttackDirection, Vector3.up);
+        PlayerCharacter.transform.rotation = targetRotation;
+
         // Play the attack animation
 
         // Detect Enemies in range
