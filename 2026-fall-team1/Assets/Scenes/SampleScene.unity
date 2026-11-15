@@ -2464,6 +2464,8 @@ MonoBehaviour:
   width: 0
   weight: 0
   speed: 0
+  healthSlider: {fileID: 0}
+  healthText: {fileID: 0}
   aggroRange: 0
   patrolPath: 
   flyHeight: 0
@@ -2695,9 +2697,7 @@ GameObject:
   - component: {fileID: 1749677568}
   - component: {fileID: 1749677566}
   - component: {fileID: 1749677571}
-  - component: {fileID: 1749677572}
   - component: {fileID: 1749677573}
-  - component: {fileID: 1749677574}
   - component: {fileID: 1749677575}
   m_Layer: 0
   m_Name: Character
@@ -2818,28 +2818,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95475399b482884ebecda8bc12dc3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  maxHealth: 10
+  maxHealth: 100
   height: 0
   width: 0
   weight: 0
-  speed: 4
+  speed: 5
+  healthSlider: {fileID: 27447847}
+  healthText: {fileID: 823436784}
   jumpForce: 20
-  cameraTransform: {fileID: 1774685851}
-  controller: {fileID: 1749677573}
---- !u!114 &1749677572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749677565}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc3d6b20923f864cb0bac9ded271515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
-  jumpHeight: 5
   cameraTransform: {fileID: 1774685851}
   controller: {fileID: 1749677573}
 --- !u!143 &1749677573
@@ -2867,22 +2853,6 @@ CharacterController:
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1749677574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749677565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2837f7a8ed17d834cb3bc3c4eae66b0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 100
-  currentHealth: 0
-  healthSlider: {fileID: 27447847}
-  healthText: {fileID: 823436784}
 --- !u!114 &1749677575
 MonoBehaviour:
   m_ObjectHideFlags: 0
