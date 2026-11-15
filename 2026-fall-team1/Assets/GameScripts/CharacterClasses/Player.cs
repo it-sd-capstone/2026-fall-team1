@@ -64,14 +64,17 @@ public class Player : Character
         playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
-    private void OnMove(InputValue value)
+    public void OnMove(InputValue value)
     {
+        Debug.Log("OnMove called");
         moveInput = value.Get<Vector2>();
         Debug.Log("Move Received: " + moveInput);
+
     }
 
     public void OnJump()
     {
+        Debug.Log("OnJump called");
         if (controller.isGrounded)
         {
             playerVelocity.y = Mathf.Sqrt(jumpForce * -2f * Physics.gravity.y);
