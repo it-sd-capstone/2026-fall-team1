@@ -89,13 +89,16 @@ public class Sword : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(newAttackDirection, Vector3.up);
         weaponTransform.transform.rotation = targetRotation;
 
-        weaponTransform.position = weaponTransform.forward * attackRange;
-
-        weaponTransform.position = ItemHolder.transform.position;
 
 
 
-        // Play the attack animation
+
+
+
+        /* Play the attack animation
+        I think attacking will actually be easier once we figure out the animation, we can have the hitbox stay active during the entire animation
+        that way attacking in different directions will be more intuitive
+        */
 
         // Detect Enemies in range
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
@@ -106,7 +109,6 @@ public class Sword : MonoBehaviour
             Debug.Log("enemy hit");
             enemy.GetComponent<Enemy>().AdjustHealth(attackDamage);
         }
-        weaponTransform.position = ItemHolder.transform.position;
     }
 
     private void OnDrawGizmosSelected()
