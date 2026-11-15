@@ -17,8 +17,8 @@ public class Sword : MonoBehaviour
     private int attackDamage = 5;
     [SerializeField]
     private float attackDelay = 2f;
-    //[SerializeField]
-    //private Transform cameraTransform;
+    [SerializeField]
+    private Transform cameraTransform;
 
     private Vector2 attackInput;
     private bool attacking = false;
@@ -73,18 +73,18 @@ public class Sword : MonoBehaviour
 
         // rotate the player toward attack
 
-        //Vector3 forward = cameraTransform.forward;
-        //Vector3 right = cameraTransform.right;
-        //forward.y = 0f;
-        //right.y = 0f;
-        //forward.Normalize();
-        //right.Normalize();
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
 
-        //Vector3 newAttackDirection = (forward * attackDirection.z + right * attackDirection.x).normalized;
+        Vector3 newAttackDirection = (forward * attackDirection.z + right * attackDirection.x).normalized;
 
 
-        //Quaternion targetRotation = Quaternion.LookRotation(newAttackDirection, Vector3.up);
-        //PlayerCharacter.transform.rotation = targetRotation;
+        Quaternion targetRotation = Quaternion.LookRotation(newAttackDirection, Vector3.up);
+        PlayerCharacter.transform.rotation = targetRotation;
 
         // Play the attack animation
 
