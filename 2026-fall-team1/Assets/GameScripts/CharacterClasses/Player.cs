@@ -121,5 +121,10 @@ public class Player : Character
     //        }
     //    }
     //}
-    
+
+    // added public constructors for save access
+    public int Lives { get { return lives; } set { lives = value; } }
+    public int Coins { get { return coins; } set { coins = value; } }
+
+
 }

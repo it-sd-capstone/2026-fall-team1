@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private SaveManager saveManager;
 
     private bool isPaused;
 
@@ -14,30 +15,27 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    private void Update ()
-    {
-        if (Keyboard.current != null &&
-            Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            if (isPaused)
-                Resume();
-            else
-                Pause();
-        }
-    }
+    public void TogglePause() { if (isPaused) Resume(); else Pause(); }
 
     public void Pause()
     {
         pauseScreen.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+
     }
+
     
     public void Resume()
     {
+        if (!isPaused) return;
         pauseScreen.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+
     }
+
+    public void SaveGame() { if (saveManager != null) saveManager.SaveGame(); }
+    public void LoadGame() { if (saveManager != null) saveManager.LoadGame(); }
      
 }

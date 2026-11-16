@@ -37,6 +37,10 @@ public class Character : MonoBehaviour
     public void Attack() { }
     public void AdjustHealth() { }
     public void Knockback() { }
+
+    // added public constructor for save access
+    public int CurrentHealth { get { return Health; } set { Health = value; } }
+
 }
 
 
