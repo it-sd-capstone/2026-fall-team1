@@ -19,8 +19,8 @@ public class Sword : MonoBehaviour
     private float attackDelay = 2f;
     [SerializeField]
     private Transform cameraTransform;
-    [SerializeField]
-    private Transform weaponTransform;
+    //[SerializeField]
+    //private Transform weaponTransform;
 
     private Vector2 attackInput;
     private bool attacking = false;
@@ -87,7 +87,8 @@ public class Sword : MonoBehaviour
 
 
         Quaternion targetRotation = Quaternion.LookRotation(newAttackDirection, Vector3.up);
-        weaponTransform.transform.rotation = targetRotation;
+        PlayerCharacter.transform.rotation = targetRotation;
+        //weaponTransform.transform.rotation = targetRotation;
 
 
 
