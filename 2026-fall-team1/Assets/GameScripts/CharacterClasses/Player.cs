@@ -22,9 +22,9 @@ public class Player : Character
 
     // Need to add arrays for unlocked items and equiped items after EquipItem is completed
 
-     protected override void Awake()
+    protected override void Awake()
     {
-         base.Awake();
+        base.Awake();
 
         if (cameraTransform == null)
         { cameraTransform = Camera.main.transform; }
@@ -90,6 +90,30 @@ public class Player : Character
     public void CenterCamera() { }
     public void Respawn() { }
     public void CheckCoins() { }
+
+
+    //        float horizontal = moveInput.x;
+    //        float vertical = moveInput.y;
+
+    //        Vector3 inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
+
+    //        if (inputDirection.magnitude >= 0.1f)
+    //        {
+
+    //            Vector3 camForward = cameraTransform.forward;
+    //            Vector3 camRight = cameraTransform.right;
+
+    //            camForward.y = 0f;
+    //            camRight.y = 0f;
+
+    //            camForward.Normalize();
+    //            camRight.Normalize();
+
+    //            Vector3 moveDirection = (camForward * inputDirection.z) + (camRight * inputDirection.x);
+
+    //            controller.Move(moveDirection * speed * Time.deltaTime);
+
+
 
     //        }
     //    }

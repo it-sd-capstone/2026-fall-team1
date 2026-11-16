@@ -16,7 +16,7 @@ public class SaveManager : MonoBehaviour
 
         saveData = new SaveData();
 
-        saveData.health = player.CurrentHealth;
+        saveData.health = Mathf.RoundToInt(player.CurrentHealth);
         saveData.lives = player.Lives;
         saveData.coins = player.Coins;
 

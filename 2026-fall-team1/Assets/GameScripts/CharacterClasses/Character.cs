@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
 {
 
     [SerializeField]
-    private float maxHealth = 10f;
+    private float maxHealth = 100f;
     [SerializeField]
     private int height;
     [SerializeField]
@@ -23,7 +23,17 @@ public class Character : MonoBehaviour
 
 
     private float currentHealth;
-    public float CurrentHealth => currentHealth;
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+        set
+        {
+            currentHealth = Mathf.Clamp(value, 0, maxHealth);
+            if (healthSlider != null)
+                healthSlider.value = currentHealth;
+            UpdateHealthUI();
+        }
+    }
 
 
     protected virtual void Awake()
@@ -75,9 +85,6 @@ public class Character : MonoBehaviour
     }
 
     public void Knockback() { }
-
-    // added public constructor for save access
-    public int CurrentHealth { get { return Health; } set { Health = value; } }
 
 }
 
