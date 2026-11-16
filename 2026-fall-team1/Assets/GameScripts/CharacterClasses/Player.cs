@@ -91,6 +91,7 @@ public class Player : Character
     public void Respawn() { }
     public void CheckCoins() { }
 
+
     //        float horizontal = moveInput.x;
     //        float vertical = moveInput.y;
 
