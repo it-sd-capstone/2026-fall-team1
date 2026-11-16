@@ -91,5 +91,12 @@ public class Player : Character
     public void Respawn() { }
     public void CheckCoins() { }
 
-    
+    //        }
+    //    }
+    //}
+
+    // added public constructors for save access
+    public int Lives { get { return lives; } set { lives = value; } }
+    public int Coins { get { return coins; } set { coins = value; } }
+
 }
