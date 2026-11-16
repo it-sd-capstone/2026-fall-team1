@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Rendering.DebugUI;
@@ -13,7 +14,6 @@ public class Player : Character
     //private Vector2 moveVector;
     private Vector2 moveInput;
     [Header("References")]
-    //private Rigidbody rb;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private CharacterController controller;
 
@@ -22,8 +22,10 @@ public class Player : Character
 
     // Need to add arrays for unlocked items and equiped items after EquipItem is completed
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         if (cameraTransform == null)
         { cameraTransform = Camera.main.transform; }
         if (controller == null)
@@ -31,11 +33,6 @@ public class Player : Character
     }
     void Update()
     {
-        //Vector3 movement = new Vector3(moveVector.x, 0f, moveVector.y);
-        //movement.Normalize();
-        ////transform.Translate(speed * movement * Time.deltaTime);
-        ////transform.position += movement * Time.deltaTime;
-        //Debug.Log("movement vector: " +  movement);
 
         if (controller.isGrounded && playerVelocity.y < 0)
         {
@@ -67,13 +64,17 @@ public class Player : Character
         playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
-    private void OnMove(InputValue value)
+    public void OnMove(InputValue value)
     {
+        Debug.Log("OnMove called");
         moveInput = value.Get<Vector2>();
+        Debug.Log("Move Received: " + moveInput);
+
     }
 
     public void OnJump()
     {
+        Debug.Log("OnJump called");
         if (controller.isGrounded)
         {
             playerVelocity.y = Mathf.Sqrt(jumpForce * -2f * Physics.gravity.y);
@@ -89,11 +90,6 @@ public class Player : Character
     public void CenterCamera() { }
     public void Respawn() { }
     public void CheckCoins() { }
-    //public void Move(InputAction.CallbackContext ctx, InputValue value)
-    //{
-    //    if (ctx.started)
-    //    {
-    //        moveInput = value.Get<Vector2>();
 
     //        float horizontal = moveInput.x;
     //        float vertical = moveInput.y;
@@ -125,6 +121,5 @@ public class Player : Character
     // added public constructors for save access
     public int Lives { get { return lives; } set { lives = value; } }
     public int Coins { get { return coins; } set { coins = value; } }
-
 
 }
