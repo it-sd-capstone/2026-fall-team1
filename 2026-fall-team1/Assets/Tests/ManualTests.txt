@@ -49,3 +49,16 @@
 
 ## Expected Results
 *11. Character will load at location save button was pressed
+
+# Test Wind Staff 
+
+##Test Steps
+1. Navigate to SampleScene in the editor
+2. Ensure the WindStaff is enabled in the editor
+3. Run the SampleScene through the editor
+4. Click window to ensure input
+5. Press T
+
+## Expected Results
+*step 2 should spawn the Cylinder mesh in the itemholder
+*step 5 should spawn the WindGust prefab underneath the player, output "Wind Staff was used!!!" into the console, and slowly raise the player upward.
