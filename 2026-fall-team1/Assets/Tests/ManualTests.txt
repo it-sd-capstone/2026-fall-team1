@@ -33,3 +33,19 @@
   5 damage taken
   5 health left
 
+# Test Load Game Button
+
+## Test Steps
+1. Run the SampleScene through the editor
+2. Click the play button
+3. Click Start Game
+4. Move Character 
+5. Click Escape button
+6. Click Save button
+7. Click Resume button
+8. Move Character
+9. Click Escape button
+10. Click Load button
+
+## Expected Results
+*11. Character will load at location save button was pressed
