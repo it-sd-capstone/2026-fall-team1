@@ -7,7 +7,7 @@
 
 ## Expected Results
 * Step 2 should result in the player character jumping
-* Step 3 should display a movement vector value of (0.00, 0.00, 1.00)
+* Step 3 should display a movement vector value of (0.00, 0.00, 1.00) in the Unity Console window
 
 # Test Start Game Button
 
@@ -18,3 +18,18 @@
 
 ## Expected Results
 * 4. Sample scene will load
+
+# Sword Input Test
+
+## Test Steps
+1. Run the SampleScene through the editor
+2. Press J on the keyboard
+3. Move the character towards the gray capsule and push I on the keyboard
+
+## Expected results
+* Step 2 should turn the character to the left and display an "Attack() Called" message in Unity's console window 
+* Step 3 should turn the character right (away from the camera), and in the console window display the attack message again as well as:
+  Starting Health: 10
+  5 damage taken
+  5 health left
+
