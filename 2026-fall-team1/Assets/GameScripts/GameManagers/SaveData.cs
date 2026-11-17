@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class SaveData
 {
     // player stats
-    public int health;
+    public float health;
     public int lives;
     public int coins;
     public int score;

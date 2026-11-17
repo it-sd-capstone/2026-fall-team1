@@ -3,19 +3,29 @@ using UnityEngine;
 public class WindStaff : MonoBehaviour
 {
     [Header("Settings")]
-    public GameObject launchPadPrefab;
+    public GameObject windGustPrefab;
     public float spawnDistanceBelow = 1.1f; // Adjust based on player height relative to item
     public float cooldown = 2f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private float nextUseTime = 0f;
+
+    // Update is called once per frame
+    private void OnWindUse()
     {
+        Debug.Log("Wind staff was used!!!");
+        //Input to use item
+        SpawnWindGust();
+        nextUseTime = Time.time + cooldown;
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void SpawnWindGust()
     {
-        
+        //Calculate position beneath the player
+        Vector3 spawnPos = transform.position + (Vector3.down * spawnDistanceBelow);
+
+        //Spawn the object
+        Instantiate(windGustPrefab, spawnPos, Quaternion.identity);
+
     }
 }
