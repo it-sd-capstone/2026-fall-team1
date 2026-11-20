@@ -10,6 +10,7 @@ public class Player : Character
     private int coins;
     [SerializeField]
     private float jumpForce = 5;
+    [SerializeField] public float playerTurnSpeed = 120f;
 
     //private Vector2 moveVector;
     private Vector2 moveInput;
@@ -58,6 +59,17 @@ public class Player : Character
             camRight.Normalize();
 
             Vector3 moveDirection = (camForward * inputDirection.z) + (camRight * inputDirection.x);
+
+            if (moveDirection.sqrMagnitude > 0.001f)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(
+                    transform.rotation,
+                    targetRotation,
+                    playerTurnSpeed * Time.deltaTime 
+                    );
+            }
+
             controller.Move(moveDirection * speed * Time.deltaTime);
         }
 
