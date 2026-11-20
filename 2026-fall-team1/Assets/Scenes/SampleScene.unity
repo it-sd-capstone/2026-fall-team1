@@ -3357,6 +3357,7 @@ GameObject:
   - component: {fileID: 1749677573}
   - component: {fileID: 1749677575}
   - component: {fileID: 1749677577}
+  - component: {fileID: 1749677578}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -3649,6 +3650,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseInputManager
   pauseMenu: {fileID: 829274432}
+--- !u!114 &1749677578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749677565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc01a3d21191854f9dd8f5ef82120d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipedItems
+  Equipment:
+  - {fileID: 602445594}
+  - {fileID: 273487493}
 --- !u!1 &1774685847
 GameObject:
   m_ObjectHideFlags: 0
