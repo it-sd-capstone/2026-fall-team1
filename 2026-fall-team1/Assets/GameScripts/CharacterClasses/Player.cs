@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Rendering.DebugUI;
@@ -117,11 +118,10 @@ public class Player : Character
 
     public void DoubleJump() { }
 
-    public void ChangeItem() { }
-
-
-    public void MoveCamera() { }
-    public void CenterCamera() { }
+    public void OnCameraFocus() 
+    {
+        cameraTransform.GetComponent<CinemachineOrbitalFollow>().HorizontalAxis.Value = transform.eulerAngles.y;
+    }
     public void Respawn() { }
     public void CheckCoins() { }
 
