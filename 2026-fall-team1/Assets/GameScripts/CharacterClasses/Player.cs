@@ -17,6 +17,10 @@ public class Player : Character
     [Header("References")]
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private CharacterController controller;
+    [SerializeField]
+    private GameObject ItemHolder;
+
+    private WeaponManager weaponManager;
 
     private float groundedSlopeForce = -2f;
     private Vector3 playerVelocity;
@@ -31,6 +35,7 @@ public class Player : Character
         { cameraTransform = Camera.main.transform; }
         if (controller == null)
         { controller = GetComponent<CharacterController>(); }
+        weaponManager = ItemHolder.GetComponent<WeaponManager>();
     }
     void Update()
     {
@@ -91,6 +96,23 @@ public class Player : Character
         {
             playerVelocity.y = Mathf.Sqrt(jumpForce * -2f * Physics.gravity.y);
         }
+    }
+
+    public void OnEquip1()
+    {
+        weaponManager.EquipWeapon(0);
+    }
+    public void OnEquip2()
+    {
+        weaponManager.EquipWeapon(1);
+    }
+    public void OnEquip3()
+    {
+        weaponManager.EquipWeapon(2);
+    }
+    public void OnEquip4()
+    {
+        weaponManager.EquipWeapon(3);
     }
 
     public void DoubleJump() { }
