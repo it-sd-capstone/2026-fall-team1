@@ -27,15 +27,17 @@ public class WindGust : MonoBehaviour
             collision.transform.SetParent(transform);
         }
     }
-
-    private void OnCollisionExit(Collision collision)
+ private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Character"))
         {
-            collision.transform.SetParent(null);
+            // Only unparent if this wind gust is still the parent
+            if (collision.transform.parent == transform)
+            {
+                collision.transform.SetParent(null);
+            }
         }
     }
-
     private void OnDestroy()
     {
         foreach (Transform child in transform)

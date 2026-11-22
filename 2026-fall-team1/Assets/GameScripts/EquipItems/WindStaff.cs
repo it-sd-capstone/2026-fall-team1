@@ -6,6 +6,7 @@ public class WindStaff : MonoBehaviour
     public GameObject windGustPrefab;
     public float spawnDistanceBelow = 1.1f; // Adjust based on player height relative to item
     public float cooldown = 2f;
+    public CharacterController characterController;
 
     private float nextUseTime = 0f;
 
@@ -14,15 +15,21 @@ public class WindStaff : MonoBehaviour
     {
         Debug.Log("Wind staff was used!!!");
         //Input to use item
-        SpawnWindGust();
-        nextUseTime = Time.time + cooldown;
-        
+        if (Time.time > nextUseTime)
+        {
+            SpawnWindGust();
+            nextUseTime = Time.time + cooldown;
+        }
     }
 
     void SpawnWindGust()
     {
+        if (windGustPrefab == null)
+        {
+            Debug.Log("Wind Gust Prefab was not selected!");
+        }
         //Calculate position beneath the player
-        Vector3 spawnPos = transform.position + (Vector3.down * spawnDistanceBelow);
+        Vector3 spawnPos = characterController.transform.position + (Vector3.down * spawnDistanceBelow);
 
         //Spawn the object
         Instantiate(windGustPrefab, spawnPos, Quaternion.identity);
