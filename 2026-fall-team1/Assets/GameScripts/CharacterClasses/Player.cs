@@ -40,7 +40,14 @@ public class Player : Character
         { controller = GetComponent<CharacterController>(); }
         weaponManager = ItemHolder.GetComponent<WeaponManager>();
         if (animator == null)
-        { animator = GetComponentInChildren<Animator>(); }
+        {
+            Animator[] animators = GetComponentsInChildren<Animator>(true);
+            foreach (Animator a in animators)
+            {
+                if (a.runtimeAnimatorController != null)
+                { animator = a; break; }
+            }
+        }
     }
     void Update()
     {
@@ -90,6 +97,7 @@ public class Player : Character
 
 
         if (animator != null)
+
         {
             animator.SetFloat("Speed", moveInput.magnitude);
             // add in if we use sprint like the animator
