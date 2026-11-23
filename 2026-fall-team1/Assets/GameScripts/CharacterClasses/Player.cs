@@ -20,11 +20,13 @@ public class Player : Character
     [SerializeField] private CharacterController controller;
     [SerializeField]
     private GameObject ItemHolder;
+    [SerializeField] private Animator animator;
 
     private WeaponManager weaponManager;
 
     private float groundedSlopeForce = -2f;
     private Vector3 playerVelocity;
+    private float moveMagnituede;
 
     // Need to add arrays for unlocked items and equiped items after EquipItem is completed
 
@@ -52,6 +54,8 @@ public class Player : Character
         {
             inputDirection.Normalize();
         }
+
+        moveMagnituede = inputDirection.magnitude;
 
         if (inputDirection.sqrMagnitude > 0f)
         {
@@ -81,6 +85,17 @@ public class Player : Character
 
         playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+
+        if (animator != null)
+
+        {
+            animator.SetFloat("Speed", moveInput.magnitude);
+            // add in if we use sprint like the animator
+            // animator.SetBool("Sprint", sprinting);
+            animator.SetBool("Grounded", controller.isGrounded);
+            animator.SetFloat("VerticalSpeed", playerVelocity.y);
+        }
     }
     public void OnMove(InputValue value)
     {
