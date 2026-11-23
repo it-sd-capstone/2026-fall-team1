@@ -39,15 +39,6 @@ public class Player : Character
         if (controller == null)
         { controller = GetComponent<CharacterController>(); }
         weaponManager = ItemHolder.GetComponent<WeaponManager>();
-        if (animator == null)
-        {
-            Animator[] animators = GetComponentsInChildren<Animator>(true);
-            foreach (Animator a in animators)
-            {
-                if (a.runtimeAnimatorController != null)
-                { animator = a; break; }
-            }
-        }
     }
     void Update()
     {

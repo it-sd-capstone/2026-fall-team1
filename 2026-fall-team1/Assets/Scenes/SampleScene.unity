@@ -1520,6 +1520,11 @@ RectTransform:
   m_AnchoredPosition: {x: 2.1643066, y: -0.000030517578}
   m_SizeDelta: {x: 4.3286, y: -0.000041962}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &521451383 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8881607466535959581, guid: cfa570707f90a144e9f2d59aabcaa705, type: 3}
+  m_PrefabInstance: {fileID: 8238069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &536329052
 GameObject:
   m_ObjectHideFlags: 0
@@ -3720,7 +3725,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 1774685851}
   controller: {fileID: 1749677573}
   ItemHolder: {fileID: 386129775}
-  animator: {fileID: 0}
+  animator: {fileID: 521451383}
 --- !u!143 &1749677573
 CharacterController:
   m_ObjectHideFlags: 0
