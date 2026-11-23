@@ -74,10 +74,25 @@ public class SaveManager : MonoBehaviour
       
     }
 
+    public bool HasSaveFile() {  return PlayerPrefs.HasKey(SaveKey); }
+
+    public void DeleteSave()
+    {
+        if (PlayerPrefs.HasKey(SaveKey))
+        {
+            PlayerPrefs.DeleteKey(SaveKey);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            Debug.Log("No save file(s) to delete.");
+        }
+    }
+
     public void NewGame()
     {
         if (player == null) { Debug.LogError("Player reference is missing."); return; }
-        
+
         player.CurrentHealth = 100;
         player.Lives = 0;
         player.Coins = 0;
