@@ -72,7 +72,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         Debug.Log("Character Is Dead");
     }

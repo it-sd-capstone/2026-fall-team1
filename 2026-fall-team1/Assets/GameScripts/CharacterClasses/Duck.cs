@@ -5,6 +5,8 @@ public class Duck : Enemy
 
     [SerializeField]
     private int flyHeight;
+    [SerializeField]
+    private GameObject ground;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
