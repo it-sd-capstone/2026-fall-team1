@@ -1199,6 +1199,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 1434476397}
   - {fileID: 273487493}
+  - {fileID: 1608638277}
   unlockedWeapons: 01y
   currentWeapon: 0
   weaponImage: []
@@ -3003,6 +3004,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5842552831627151565, guid: c7136e4a2f7c2374d9409aac4703d8b9, type: 3}
   m_PrefabInstance: {fileID: 6121505564223939842}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1608638277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1027229927725835158, guid: ee9c2ca97fe3f76429a9e3e614285553, type: 3}
+  m_PrefabInstance: {fileID: 4345939685174188789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1682033831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,6 +4790,10 @@ PrefabInstance:
       propertyPath: cooldown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8961788472153784332, guid: ee9c2ca97fe3f76429a9e3e614285553, type: 3}
+      propertyPath: playerRoot
+      value: 
+      objectReference: {fileID: 1749677570}
     - target: {fileID: 8961788472153784332, guid: ee9c2ca97fe3f76429a9e3e614285553, type: 3}
       propertyPath: spawnPoint
       value: 
