@@ -537,17 +537,6 @@
                 },
                 {
                     "name": "",
-                    "id": "58845eaa-0ee8-4497-ae65-e1608c332b94",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "WindUse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "abad3781-c876-4f69-80eb-d4f633734dd8",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
