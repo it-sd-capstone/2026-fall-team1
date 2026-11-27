@@ -108,7 +108,11 @@ public class Sword : MonoBehaviour
         foreach (Collider enemy in hitEnemies)
         {
             Debug.Log("enemy hit");
-            enemy.GetComponent<Enemy>().AdjustHealth(attackDamage);
+            if (enemy.GetComponent<Enemy>()) 
+            {
+                enemy.GetComponent<Enemy>().AdjustHealth(attackDamage);
+            }
+            
         }
     }
 
