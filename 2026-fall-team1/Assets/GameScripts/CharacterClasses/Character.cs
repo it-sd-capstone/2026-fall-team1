@@ -49,7 +49,7 @@ public class Character : MonoBehaviour
         UpdateHealthUI();
     }
 
-    public void Attack() { }
+    // public void Attack() { }
     public void AdjustHealth(int damage) 
     {
         //Subtract damage and ensure health doesn't go below 0 or above maxHealth

@@ -99,9 +99,9 @@ public class Player : Character
     }
     public void OnMove(InputValue value)
     {
-        Debug.Log("OnMove called");
+        //Debug.Log("OnMove called");
         moveInput = value.Get<Vector2>();
-        Debug.Log("Move Received: " + moveInput);
+        //Debug.Log("Move Received: " + moveInput);
 
     }
 
